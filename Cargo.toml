@@ -1,0 +1,15 @@
+[package]
+name = "blockifier_benching"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+blockifier = { git = "https://github.com/starkware-libs/sequencer", branch = "main", features = ["testing", "concurrency"] }
+criterion = "0.5.1"
+serde = "1.0.210"
+serde_json = "1.0.128"
+
+[[bench]]
+harness = false
+name = "blockifier_bench"
+path = "bench/blockifier_bench.rs"
